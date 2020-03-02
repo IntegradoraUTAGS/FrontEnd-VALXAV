@@ -1,5 +1,5 @@
 body {
-	padding-top: 30px;	
+	padding-top: 30px;
 }
 .panel-login {
 	border-color: #ccc;
@@ -54,15 +54,15 @@ body {
 	border-color: #ccc;
 }
 .btn-login {
-    outline: none;
-    font-size: 14px;
-    height: auto;
-    font-weight: normal;
-    padding: 14px 0;
-    text-transform: uppercase;
-    color: #fff;
-    background-color: #28a745;
-    border-color: #28a745;
+	background-color: #59B2E0;
+	outline: none;
+	color: #fff;
+	font-size: 14px;
+	height: auto;
+	font-weight: normal;
+	padding: 14px 0;
+	text-transform: uppercase;
+	border-color: #59B2E6;
 }
 .btn-login:hover,
 .btn-login:focus {
@@ -90,14 +90,10 @@ body {
 	padding: 14px 0;
 	text-transform: uppercase;
 	border-color: #1CB94A;
-		
-	
 }
 .btn-register:hover,
 .btn-register:focus {
 	color: #fff;
 	background-color: #1CA347;
 	border-color: #1CA347;
-	
 }
-
