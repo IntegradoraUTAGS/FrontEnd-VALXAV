@@ -1,0 +1,76 @@
+.contenedor{
+    position: relative;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,0%);
+}
+
+.cAdd{
+    position: relative;
+    left: 0;
+    
+}
+
+.cAdd input{
+    position: relative;
+    border: 1px solid rgb(112, 110, 110);
+    width: 45%;
+    height: 40px;
+    left: 48%;
+    transform: translate(-50%,0);
+
+}
+.cAdd button{
+    position: absolute;
+    width: 5%;
+    height: 45px;
+    background-color: rgb(96, 180, 120);
+    color: white;
+    font-size: 30px;
+    margin: 0;
+    left: 70%;
+    
+
+}
+.cTabla{
+    position: relative; 
+    
+}
+.cTabla table{
+    position: relative;
+    width: 50%;
+    left: 50%;
+    transform: translate(-50%,0);
+    
+}
+.cTabla table td{
+    text-align: center;
+    font-size: 30px;
+}
+.cTabla table th{
+    text-align: center;
+    font-size: 30px;
+}
+.cTabla table td button{
+    width: 50px;
+}
+.btnDelete{
+    background: none;
+    border: none;
+
+}
+.btnDelete img{
+    width: 30px;
+
+}
+.btnEdit{
+    background: none;
+    border: none;
+
+}
+.btnEdit img{
+    width: 30px;
+
+}
+

@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "FrontEndIntegradora": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "FrontEndIntegradora"
+    }
+  },
+  "defaultProject": "FrontEndIntegradora",
+  "cli": {
+    "analytics": "bf5c2b2a-2ffb-47b5-bddd-69d58eedfe63"
+  }
 }
