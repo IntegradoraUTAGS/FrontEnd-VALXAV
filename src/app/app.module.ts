@@ -13,12 +13,15 @@ import { HttpClientModule }    from '@angular/common/http';
 
 import { LoginComponent } from './login/login.component';
 import {RegisterComponent} from './register/register.component';
+import { AltacarreraComponent } from './altacarrera/altacarrera.component';
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AltacarreraComponent,
+
   
   ],
   imports: [
