@@ -14,6 +14,7 @@ import { HttpClientModule }    from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import { AltacarreraComponent } from './altacarrera/altacarrera.component';
+import { AltaespecialidadComponent } from './altaespecialidad/altaespecialidad.component';
 import { AltaperiodoComponent } from './altaperiodo/altaperiodo.component';
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AltaperiodoComponent } from './altaperiodo/altaperiodo.component';
     LoginComponent,
     RegisterComponent,
     AltacarreraComponent,
+    AltaespecialidadComponent,
     AltaperiodoComponent,
 
   
