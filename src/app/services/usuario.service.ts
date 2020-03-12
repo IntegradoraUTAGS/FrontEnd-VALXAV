@@ -6,7 +6,7 @@ import { Usuario } from '../models/usuario.model';
   providedIn: 'root'
 })
 export class UsuarioService {
-  url='http://localhost:3000'
+  url='http://localhost:3000/api'
 
   constructor(private http: HttpClient) { }
 
@@ -20,22 +20,22 @@ export class UsuarioService {
   }
 
   getAcademia() {
-    return this.http.get('http://172.16.111.183:3000/academia');
+    return this.http.get(`${this.url}/academia`);
   }
 
 
   postAcademia(nombre:any){
-    return this.http.post('http://172.16.111.183:3000/academia',{
+    return this.http.post(`${this.url}/academia`,{
       nombre:nombre
     });
   }
 
   deleteAcademia(id:any){
-    return this.http.delete('http://172.16.111.183:3000/academia/'+id)
+    return this.http.delete(`${this.url}/academia/${id}`)
   }
 
   putAcademia(id:any,nombre:any){
-    return this.http.put('http://172.16.111.183:3000/academia/'+id,{
+    return this.http.put(`${this.url}/academia/${id}`,{
       nombre:nombre
     });
   }
