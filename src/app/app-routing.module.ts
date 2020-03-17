@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { AltacarreraComponent } from './pages/altacarrera/altacarrera.component';
+import { AltagrupoComponent } from './pages/altagrupo/altagrupo.component';
 import { AltaperiodoComponent } from './pages/altaperiodo/altaperiodo.component';
 import { AltaespecialidadComponent } from './pages/altaespecialidad/altaespecialidad.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'register', component:RegisterComponent},
   {path:'altacarrera', component:AltacarreraComponent},
+  {path:'altagrupo', component:AltagrupoComponent},
   {path:'altaperiodo', component:AltaperiodoComponent},
   {path:'altaespecialidad', component:AltaespecialidadComponent},
   {path:'home',component:NavbarComponent}
