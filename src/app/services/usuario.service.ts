@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Usuario } from '../models/usuario.model';
 import { Coordinador } from '../models/coordinador.model';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -43,4 +44,5 @@ export class UsuarioService {
   postCoordinador(coordinador: Coordinador){
     return this.http.post(`${this.url}/coordinador/registrar`, coordinador).toPromise();
   }
+
 }
