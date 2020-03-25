@@ -14,6 +14,7 @@ import { HttpClientModule }    from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component';
 import {RegisterComponent} from './pages/register/register.component';
 import { AltacarreraComponent } from './pages/altacarrera/altacarrera.component';
+import { AltagrupoComponent } from './pages/altagrupo/altagrupo.component';
 import { AltaespecialidadComponent } from './pages/altaespecialidad/altaespecialidad.component';
 import { AltamateriaComponent } from './pages/altamateria/altamateria.component';
 import { AltaperiodoComponent } from './pages/altaperiodo/altaperiodo.component';
@@ -24,6 +25,7 @@ import { AltaperiodoComponent } from './pages/altaperiodo/altaperiodo.component'
     LoginComponent,
     RegisterComponent,
     AltacarreraComponent,
+    AltagrupoComponent,
     AltaespecialidadComponent,
     AltamateriaComponent,
     AltaperiodoComponent,
