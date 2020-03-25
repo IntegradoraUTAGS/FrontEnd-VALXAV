@@ -7,6 +7,7 @@ import { AltacarreraComponent } from './pages/altacarrera/altacarrera.component'
 import { AltagrupoComponent } from './pages/altagrupo/altagrupo.component';
 import { AltaperiodoComponent } from './pages/altaperiodo/altaperiodo.component';
 import { AltaespecialidadComponent } from './pages/altaespecialidad/altaespecialidad.component';
+import { AltamateriaComponent } from './pages/altamateria/altamateria.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path:'altagrupo', component:AltagrupoComponent},
   {path:'altaperiodo', component:AltaperiodoComponent},
   {path:'altaespecialidad', component:AltaespecialidadComponent},
+  {path:'altamateria', component:AltamateriaComponent},
   {path:'home',component:NavbarComponent}
   
 

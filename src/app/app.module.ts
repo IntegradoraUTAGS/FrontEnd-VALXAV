@@ -16,6 +16,7 @@ import {RegisterComponent} from './pages/register/register.component';
 import { AltacarreraComponent } from './pages/altacarrera/altacarrera.component';
 import { AltagrupoComponent } from './pages/altagrupo/altagrupo.component';
 import { AltaespecialidadComponent } from './pages/altaespecialidad/altaespecialidad.component';
+import { AltamateriaComponent } from './pages/altamateria/altamateria.component';
 import { AltaperiodoComponent } from './pages/altaperiodo/altaperiodo.component';
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AltaperiodoComponent } from './pages/altaperiodo/altaperiodo.component'
     AltacarreraComponent,
     AltagrupoComponent,
     AltaespecialidadComponent,
+    AltamateriaComponent,
     AltaperiodoComponent,
 
   
