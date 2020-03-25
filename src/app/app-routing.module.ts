@@ -6,6 +6,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { AltacarreraComponent } from './pages/altacarrera/altacarrera.component';
 import { AltaperiodoComponent } from './pages/altaperiodo/altaperiodo.component';
 import { AltaespecialidadComponent } from './pages/altaespecialidad/altaespecialidad.component';
+import { AltamateriaComponent } from './pages/altamateria/altamateria.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path:'altacarrera', component:AltacarreraComponent},
   {path:'altaperiodo', component:AltaperiodoComponent},
   {path:'altaespecialidad', component:AltaespecialidadComponent},
+  {path:'altamateria', component:AltamateriaComponent},
   {path:'home',component:NavbarComponent}
   
 
