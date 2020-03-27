@@ -1,14 +1,10 @@
 <div class="contenedor">
-
     <br><br><br>
     <div class="cAdd">
         <input  type="text" [(ngModel)]="nombre" placeholder="Registro Academias">
         <button (click)="Agregar(nombre)">+</button>
     </div>
     <br><br>
-    
-
-
     <div class="cTabla">
         <table  class="tabla" border=1 cellspacing=0 cellpadding=2 bordercolor="666633">
             <th>Academias</th>
@@ -16,7 +12,7 @@
             <tr *ngFor="let academia of academias">
                 <td>{{academia.nombre}}
                     </td>
-                <td>
+                     <td>
                     <button (click)="AlertaDelete(academia._id)"  class="btnDelete"><img src="../../../assets/icons/trash-can_115312.ico" alt=""></button>
                     <button (click)="AlertaEditar(academia._id,academia.nombre)" class="btnEdit"><img src="../../../assets/icons/3592869-compose-create-edit-edit-file-office-pencil-writing-creative_107746.ico" alt=""></button>
                 </td>
