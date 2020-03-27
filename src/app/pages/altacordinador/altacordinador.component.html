@@ -20,16 +20,16 @@
 								
 							<div class="form-group">
 								<p>Docente</p>
-							<!-- <select [(ngModel)]="model">
-								<option *ngFor="let item of list" [value]="item">{{item}}</option>
-							</select> -->
+								<select [(ngModel)]="coordinador.usuario">
+									<option *ngFor="let coor of coordinadores" [value]="coor">{{coor.nombre}}</option>
+								</select> 
 						</div>
 						<hr>
 						<div class="form-group">
 							<p>Academia</p>
-						<!-- <select [(ngModel)]="model">
-							<option *ngFor="let item of list" [value]="item">{{item}}</option>
-						</select> -->
+						<select [(ngModel)]="acade.nombre">
+							<option *ngFor="let Iacade of acades" [value]="Iacade">{{Iacade.nombre}}</option>
+						</select> 
 					</div>
 					<hr>
 								<div class="form-group">
