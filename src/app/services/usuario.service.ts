@@ -1,10 +1,11 @@
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Usuario } from '../models/usuario.model';
 import { Coordinador } from '../models/coordinador.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class UsuarioService {
 
@@ -16,26 +17,40 @@ export class UsuarioService {
   }
   login(usuario: Usuario){
     return this.http.post(`${this.url}/login/login`, usuario).toPromise();
+
   }
   getAcademia() {
     return this.http.get(`${this.url}/academia`);
   }
-  postAcademia(nombre:any){
-    return this.http.post(`${this.url}/academia`,{
-      nombre:nombre
+
+
+  postAcademia(nombre: any) {
+    return this.http.post(`${this.url}/academia`, {
+      nombre: nombre
     });
   }
-  deleteAcademia(id:any){
-    return this.http.delete(`${this.url}/academia/${id}`)
+
+  deleteAcademia(id: any) {
+    return this.http.delete(`${this.url}/academia/${id}`);
   }
-  putAcademia(id:any,nombre:any){
-    return this.http.put(`${this.url}/academia/${id}`,{
-      nombre:nombre
+
+  putAcademia(id: any, nombre: any) {
+    return this.http.put(`${this.url}/academia/${id}`, {
+      nombre: nombre
     });
   }
-  postCoordinador(coordinador: Coordinador){
-    return this.http.post(`${this.url}/coordinador/registrar`, coordinador).toPromise();
+
+  postCoordinador(coordinador: Coordinador) {
+    return this.http
+      .post(`${this.url}/coordinador/registrar`, coordinador)
+      .toPromise();
   }
+
+  postCarrera(nombre: any) {
+    return this.http.post(`${this.url}/carrera/registrar`, {
+      nombre: nombre
+    });
+
 
   getCoordinador(){
    return this.http.get(`${this.url}/usuario/obtener`).toPromise();
