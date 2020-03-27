@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
  login(){
 this.servicio.login(this.usuario).then(resp =>{
   console.log(resp);
-  location.href="register"
+  location.href="navbar"
 }).catch((err:any)=>{
   console.log(err);
 })
