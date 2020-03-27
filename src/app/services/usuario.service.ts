@@ -7,13 +7,15 @@ import { Coordinador } from '../models/coordinador.model';
   providedIn: 'root'
 })
 export class UsuarioService {
+
   url='http://localhost:3000/api'
+
   constructor(private http: HttpClient) { }
   registrar(usuario: Usuario){
     return this.http.post(`${this.url}/usuario/registrar`, usuario).toPromise();
   }
   login(usuario: Usuario){
-    return this.http.post(`${this.url}/login`, usuario).toPromise();
+    return this.http.post(`${this.url}/login/login`, usuario).toPromise();
   }
   getAcademia() {
     return this.http.get(`${this.url}/academia`);
@@ -34,5 +36,13 @@ export class UsuarioService {
   postCoordinador(coordinador: Coordinador){
     return this.http.post(`${this.url}/coordinador/registrar`, coordinador).toPromise();
   }
+
+  getCoordinador(){
+   return this.http.get(`${this.url}/usuario/obtener`).toPromise();
+ }
+
+ getAcade(){
+  return this.http.get(`${this.url}/academia/obtener`).toPromise();
+}
 
 }

@@ -21,14 +21,17 @@ export class RegisterComponent implements OnInit {
 
     this.servicio.registrar(this.usuario).then(resp => {
       console.log(resp);
+      
     }).catch((err: any) => {
+      
       console.log(err);
-
+      
       Swal.fire({
         icon: 'error',
         title: err.msg,
         text: err.error.msg,
       })
+     // location.href="login"
       
     });
   } else {
