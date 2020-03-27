@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Materia } from '../../models/materia.model';
+import { MateriaService } from 'src/app/services/materia.service';
+
+
 
 @Component({
   selector: 'app-altamateria',
@@ -6,10 +10,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./altamateria.component.css']
 })
 export class AltamateriaComponent implements OnInit {
-
-  constructor() { }
+materia:Materia= new Materia();
+constructor(private servicio: MateriaService) { }
 
   ngOnInit() {
+
   }
 
 }
