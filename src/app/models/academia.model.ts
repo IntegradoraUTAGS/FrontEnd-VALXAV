@@ -1,6 +1,5 @@
-export class Academia{
-   
-    id?:string;
-   nombre :string;
-   estado:string;
-     }
+export class Academia {
+  id: string;
+  nombre: String;
+  estado: String;
+}
