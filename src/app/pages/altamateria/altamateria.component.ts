@@ -16,5 +16,12 @@ constructor(private servicio: MateriaService) { }
   ngOnInit() {
 
   }
-
+  registrarmateria(){
+    this.servicio.postMateria(this.materia).then(resp =>{
+      console.log(resp);
+      //location.href
+    }).catch((err:any)=>{
+      console.log(err);
+    })
+    }
 }
