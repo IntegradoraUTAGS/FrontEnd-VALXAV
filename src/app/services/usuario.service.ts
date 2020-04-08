@@ -50,7 +50,7 @@ export class UsuarioService {
     return this.http.post(`${this.url}/carrera/registrar`, {
       nombre: nombre
     });
-
+  }
 
   getCoordinador(){
    return this.http.get(`${this.url}/usuario/obtener`).toPromise();
