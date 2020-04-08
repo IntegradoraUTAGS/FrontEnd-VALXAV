@@ -2,24 +2,27 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Academia } from "../models/academia.model";
 @Injectable({
-  providedIn: "root",
+
+  providedIn: "root"
 })
 export class AcademiaService {
-  url = "http://localhost:3000/api";
+  url = "http://localhost:3000/api/academia";
   constructor(private http: HttpClient) {}
+  registrar(nombre: String) {
+    return this.http
+      .post(`${this.url}/registrar`, { nombre: nombre })
+      .toPromise();
+  }
   obtener() {
-    return this.http.get(`${this.url}/academia`).toPromise();
+    return this.http.get(`${this.url}/obtener`).toPromise();
   }
-
-  registrar(nombre: any) {
-    return this.http.post(`${this.url}/academia`, { nombre }).toPromise();
+  actualizar(id: any, nombre: String) {
+    return this.http
+      .put(`${this.url}/actualizar/${id}`, { nombre: nombre })
+      .toPromise();
   }
-
   eliminar(id: any) {
-    return this.http.delete(`${this.url}/academia/${id}`).toPromise();
-  }
+    return this.http.delete(`${this.url}/eliminar/${id}`).toPromise();
 
-  actualizar(id: any, nombre: any) {
-    return this.http.put(`${this.url}/academia/${id}`, { nombre }).toPromise();
   }
 }
