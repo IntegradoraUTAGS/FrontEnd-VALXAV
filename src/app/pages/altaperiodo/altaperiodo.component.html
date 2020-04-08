@@ -16,17 +16,17 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="periodo-form" #myForm='ngForm'action="Api rest de alta *********" method="post" role="form" style="display: block;">
+								<form  #Forma='ngForm' (ngSubmit)='registrarperiodo()'>
 											<div class="form-group">
-												<input [(ngModel)]="periodo.nombre" type="text" name="nombre" id="nombre" tabindex="1" class="form-control" placeholder="Nombre del periodo">
+												<input  type="text"  class="form-control" id="validationsServer01" name="nombre" [(ngModel)]="periodo.nombre" #nombre="ngModel" placeholder="Nombre del periodo" required>
 											</div>
 											<div class="form-group">
 									<h5>Fecha de inicio</h5>
-									<input [(ngModel)]="periodo.fechaInicio" type="date" name="fechaInicio" id="fechaInicio" tabindex="1" class="form-control" placeholder="Ingresa la fecha de inicio">
+									<input  type="date"  class="form-control" id="validationsServer02" name="fechaInicio" [(ngModel)]="periodo.fechaInicio" #fechaInicio="ngModel" placeholder="Ingresa la fecha de inicio" required>
 											</div>
 											<div class="form-group"> 
 								<h5>Fecha de fin</h5>
-								<input [(ngModel)]="periodo.fechaFin" type="date" name="fechaFin" id="fechaFin" tabindex="1" class="form-control" placeholder="Ingresa la fecha de fin">
+								<input  type="date"  class="form-control" id="validationsServer03" name="fechaFin" [(ngModel)]="periodo.fechaFin" #fechaFin="ngModel" placeholder="Ingresa la fecha de termino" required>
 											</div>
 									<div class="form-group">
 										<div class="row">
