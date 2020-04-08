@@ -14,17 +14,20 @@ export class AltaperiodoComponent implements OnInit {
   periodo: Periodo = new Periodo ();
   
 
-  constructor(private servicio: PeriodoService) { }
+  constructor(private periodoService: PeriodoService) {
+
+   }
 
   ngOnInit() {
   }
 registrarperiodo(){
-  this.servicio.postPeriodo(this.periodo).then(resp =>{
-    console.log(resp);
-    //location.href
-  }).catch((err:any)=>{
-    console.log(err);
-  })
+  console.log(this.periodo);
+  this.periodoService.registrarperiodo(this.periodo).then((respuesta) => {
+
+  }).catch((err) => {
+
+  });
+  
   }
 }
 
