@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Academia } from "../models/academia.model";
 @Injectable({
+
   providedIn: "root"
 })
 export class AcademiaService {
@@ -22,5 +23,6 @@ export class AcademiaService {
   }
   eliminar(id: any) {
     return this.http.delete(`${this.url}/eliminar/${id}`).toPromise();
+
   }
 }

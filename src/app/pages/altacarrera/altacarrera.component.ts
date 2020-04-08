@@ -1,24 +1,24 @@
-import { UsuarioService } from "./../../services/usuario.service";
+import { CarreraService } from "../../services/carrera.service";
 import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: "app-altacarrera",
   templateUrl: "./altacarrera.component.html",
-  styleUrls: ["./altacarrera.component.css"]
+  styleUrls: ["./altacarrera.component.css"],
 })
 export class AltacarreraComponent implements OnInit {
-  constructor(protected usuarioService: UsuarioService) {}
+  constructor(protected carreraService: CarreraService) {}
   nombre = "";
   ngOnInit() {}
 
   agregar(nombre: any) {
-    this.usuarioService.postCarrera(nombre).subscribe(
-      data => {
+    this.carreraService
+      .registrar(nombre)
+      .then((data) => {
         console.log(data);
-      },
-      error => {
-        console.error(error);
-      }
-    );
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   }
 }

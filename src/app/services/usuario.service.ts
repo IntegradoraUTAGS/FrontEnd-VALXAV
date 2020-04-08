@@ -4,7 +4,7 @@ import { Usuario } from "../models/usuario.model";
 import { Coordinador } from "../models/coordinador.model";
 
 @Injectable({
-  providedIn: "root"
+  providedIn: "root",
 })
 export class UsuarioService {
   url = "http://localhost:3000/api";
@@ -15,6 +15,7 @@ export class UsuarioService {
   }
   login(usuario: Usuario) {
     return this.http.post(`${this.url}/login/login`, usuario).toPromise();
+
   }
   getAcademia() {
     return this.http.get(`${this.url}/academia`);
@@ -34,6 +35,7 @@ export class UsuarioService {
     return this.http.put(`${this.url}/academia/${id}`, {
       nombre: nombre
     });
+
   }
 
   postCoordinador(coordinador: Coordinador) {
@@ -42,11 +44,13 @@ export class UsuarioService {
       .toPromise();
   }
 
+
   postCarrera(nombre: any) {
     return this.http.post(`${this.url}/carrera/registrar`, {
       nombre: nombre
     });
   }
+
 
   getCoordinador() {
     return this.http.get(`${this.url}/usuario/obtener`).toPromise();

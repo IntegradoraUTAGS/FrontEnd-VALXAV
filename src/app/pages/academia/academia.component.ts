@@ -5,7 +5,8 @@ import Swal from "sweetalert2";
 @Component({
   selector: "app-academia",
   templateUrl: "./academia.component.html",
-  styleUrls: ["./academia.component.css"]
+  styleUrls: ["./academia.component.css"],
+
 })
 export class AcademiaComponent implements OnInit {
   academias: any[] = [];
@@ -16,19 +17,23 @@ export class AcademiaComponent implements OnInit {
   ngOnInit() {
     this.academiaService
       .obtener()
-      .then(data => {
+
+      .then((data) => {
         // Success
         this.academias = data["academia"];
       })
-      .catch((err: any) => {
-        console.error(err);
+      .catch((error) => {
+        console.error(error);
+
       });
   }
 
   Agregar(Nombre) {
     this.academiaService
       .registrar(Nombre)
-      .then(data => {
+
+      .then((data) => {
+
         // Success
 
         Swal.fire({
@@ -36,13 +41,17 @@ export class AcademiaComponent implements OnInit {
           icon: "success",
           title: "Your work has been saved",
           showConfirmButton: false,
+
           timer: 1500
+
         });
 
         location.reload();
       })
-      .catch((err: any) => {
-        console.error(err);
+
+      .catch((error) => {
+        console.error(error);
+
       });
   }
 
@@ -50,9 +59,11 @@ export class AcademiaComponent implements OnInit {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton: "btn btn-success",
-        cancelButton: "btn btn-danger"
+
+        cancelButton: "btn btn-danger",
       },
       buttonsStyling: false
+
     });
 
     swalWithBootstrapButtons
@@ -63,9 +74,11 @@ export class AcademiaComponent implements OnInit {
         showCancelButton: true,
         confirmButtonText: "Yes, delete it!",
         cancelButtonText: "No, cancel!",
-        reverseButtons: true
+
+        reverseButtons: true,
       })
-      .then(result => {
+      .then((result) => {
+
         if (result.value) {
           swalWithBootstrapButtons.fire(
             "Deleted!",
@@ -79,7 +92,9 @@ export class AcademiaComponent implements OnInit {
         ) {
           swalWithBootstrapButtons.fire(
             "Cancelled",
+
             "Your file is safe :)",
+
             "error"
           );
         }
@@ -88,29 +103,35 @@ export class AcademiaComponent implements OnInit {
   Eliminar(Id) {
     this.academiaService
       .eliminar(Id)
-      .then(data => {
+
+      .then((data) => {
         // Success
         location.reload();
       })
-      .catch((err: any) => {
-        console.error(err);
+      .catch((error) => {
+        console.error(error);
+
       });
   }
 
   Editar(id: any, nombre: any) {
     this.academiaService
       .actualizar(id, nombre)
-      .then(data => {
+
+      .then((data) => {
+
         Swal.fire({
           position: "top-end",
           icon: "success",
           title: "Your work has been saved",
           showConfirmButton: false,
-          timer: 1500
+
+          timer: 1500,
         });
       })
-      .catch((err: any) => {
-        console.error(err);
+      .catch((error) => {
+        console.error(error);
+
       });
   }
   AlertaEditar(Id, inputValue) {
@@ -119,13 +140,17 @@ export class AcademiaComponent implements OnInit {
       input: "text",
       inputValue: inputValue,
       showCancelButton: true,
-      inputValidator: value => {
+
+      inputValidator: (value) => {
+
         if (!value) {
           return "You need to write something!";
         }
         this.Editar(Id, value);
         location.reload();
+
       }
+
     });
   }
 }
