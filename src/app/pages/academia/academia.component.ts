@@ -1,156 +1,130 @@
-import { Component, OnInit } from '@angular/core';
-import {AcademiaService} from '../../service/academia.service'
-import Swal from 'sweetalert2'
+import { Component, OnInit } from "@angular/core";
+import { AcademiaService } from "../../services/academia.service";
+import Swal from "sweetalert2";
 @Component({
-  selector: 'app-academia',
-  templateUrl: './academia.component.html',
-  styleUrls: ['./academia.component.css']
+  selector: "app-academia",
+  templateUrl: "./academia.component.html",
+  styleUrls: ["./academia.component.css"],
 })
 export class AcademiaComponent implements OnInit {
-academias: any[] = []
-nombre='';
+  academias: any[] = [];
+  nombre = "";
 
-  constructor(    protected academiaService: AcademiaService) { }
+  constructor(protected academiaService: AcademiaService) {}
 
   ngOnInit() {
-    
-    this.academiaService.getAcademia()
-    .subscribe(
-      (data) => { // Success
-        this.academias = data['academia'];
-    
-      },
-      (error) => {
+    this.academiaService
+      .obtener()
+      .then((data) => {
+        // Success
+        this.academias = data["academia"];
+      })
+      .catch((error) => {
         console.error(error);
-      }
-    );
+      });
   }
 
+  Agregar(Nombre) {
+    this.academiaService
+      .registrar(Nombre)
+      .then((data) => {
+        // Success
 
-
-
-
-
-
-
-
-  
-  Agregar(Nombre){
-    this.academiaService.postAcademia(Nombre)
-    .subscribe(
-      (data) => { // Success
-      
         Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          title: 'Your work has been saved',
+          position: "top-end",
+          icon: "success",
+          title: "Your work has been saved",
           showConfirmButton: false,
-          timer: 1500
-        })
-        
-        location.reload()
-      },
-      (error) => {
+          timer: 1500,
+        });
+
+        location.reload();
+      })
+      .catch((error) => {
         console.error(error);
-      }
-    );
+      });
   }
 
-
-
-
-
-
-
-  AlertaDelete(Id){
+  AlertaDelete(Id) {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
-        confirmButton: 'btn btn-success',
-        cancelButton: 'btn btn-danger'
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger",
       },
-      buttonsStyling: false
-    })
-    
-    swalWithBootstrapButtons.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'Yes, delete it!',
-      cancelButtonText: 'No, cancel!',
-      reverseButtons: true
-    }).then((result) => {
-      
-      if (result.value) {
-        swalWithBootstrapButtons.fire(
-          'Deleted!',
-          'Your file has been deleted.',
-          'success'
-          
-        )
-        this.Eliminar(Id);
-        
-      } else if (
-        /* Read more about handling dismissals below */
-        result.dismiss === Swal.DismissReason.cancel
-      ) {
-        swalWithBootstrapButtons.fire(
-          'Cancelled',
-          'Your imaginary file is safe :)',
-          'error'
-        )
-      }
-    })
-  }
-  Eliminar(Id){
-    this.academiaService.deleteAcademia(Id)
-    .subscribe(
-      (data) => { // Success
-        location.reload()
-        
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
-  }
+      buttonsStyling: false,
+    });
 
-
-
-
-
-Editar(id:any,nombre:any){
-  this.academiaService.putAcademia(id,nombre)
-  .subscribe(
-    (data) =>{
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Your work has been saved',
-        showConfirmButton: false,
-        timer: 1500
+    swalWithBootstrapButtons
+      .fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true,
       })
-    },
-    (error)=>{
-      console.error(error);
-    }
-  )
-}
-AlertaEditar(Id,inputValue){
- 
-  Swal.fire({
-    title: 'Nuevo nombre de la academia',
-    input: 'text',
-    inputValue: inputValue,
-    showCancelButton: true,
-    inputValidator: (value) => {
-      if (!value) {
-        return 'You need to write something!'
-      }
-      this.Editar(Id,value)
-      location.reload()
-    }
-  })
-}
+      .then((result) => {
+        if (result.value) {
+          swalWithBootstrapButtons.fire(
+            "Deleted!",
+            "Your file has been deleted.",
+            "success"
+          );
+          this.Eliminar(Id);
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire(
+            "Cancelled",
+            "Your imaginary file is safe :)",
+            "error"
+          );
+        }
+      });
+  }
+  Eliminar(Id) {
+    this.academiaService
+      .eliminar(Id)
+      .then((data) => {
+        // Success
+        location.reload();
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
 
+  Editar(id: any, nombre: any) {
+    this.academiaService
+      .actualizar(id, nombre)
+      .then((data) => {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Your work has been saved",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+  AlertaEditar(Id, inputValue) {
+    Swal.fire({
+      title: "Nuevo nombre de la academia",
+      input: "text",
+      inputValue: inputValue,
+      showCancelButton: true,
+      inputValidator: (value) => {
+        if (!value) {
+          return "You need to write something!";
+        }
+        this.Editar(Id, value);
+        location.reload();
+      },
+    });
+  }
 }
