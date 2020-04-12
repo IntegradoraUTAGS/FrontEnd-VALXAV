@@ -1,7 +1,7 @@
 export class Periodo {
         
-        _id?: string;
-         nombre: string;
-        fechaInicio: Date;
-        fechaFin: Date;
+        _id?: String;
+         nombre: String;
+        fechaInicio: String;
+        fechaFin: String;
 }
