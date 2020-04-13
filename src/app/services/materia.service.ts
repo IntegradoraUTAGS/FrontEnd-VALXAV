@@ -9,12 +9,8 @@ export class MateriaService {
   constructor(private http: HttpClient) { }
 
 
-  postMateria(periodo: Materia){
-    return this.http.post(`${this.url}/materia/registrar`, Materia ).toPromise();
-
-  }
-  getMateria() {
-    return this.http.get(`${this.url}/materia/obtener`).toPromise();
+  postMateria(materia: Materia){
+    return this.http.post(`${this.url}/materia/registrar`,Materia ).toPromise();
   }
   getAcade() {
     return this.http.get(`${this.url}/academia/obtener`).toPromise();

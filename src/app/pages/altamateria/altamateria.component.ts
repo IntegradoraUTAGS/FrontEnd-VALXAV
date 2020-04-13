@@ -11,10 +11,11 @@ import { Acade } from 'src/app/models/acade.model';
 export class AltamateriaComponent implements OnInit {
 materia:Materia= new Materia();
 constructor(private servicio: MateriaService) { }
-cade: Acade = new Acade();
+acade: Acade = new Acade();
 acades: Acade[];
-  ngOnInit() {
 
+  ngOnInit() {
+   this.obtenerAcade();
   }
   registrarmateria(){
     this.servicio.postMateria(this.materia).then(resp =>{
@@ -24,19 +25,12 @@ acades: Acade[];
       console.log(err);
     })
     }
-    obtenermateria(){
-      this.servicio.getMateria().then((resp: any) =>{
-       this.materia = resp.materia;
-        console.log(resp);
-      }).catch(()=>{
-        
-      });
-    }
-    obtenerAcade(){
+   
+  obtenerAcade(){
       this.servicio.getAcade().then((resp: any) =>{
-       this.acades = resp.academia;
+      this.acades = resp.academia;
         console.log(resp);
       }).catch(()=>{
       });
-    }
+   }
 }

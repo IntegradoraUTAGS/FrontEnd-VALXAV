@@ -8,9 +8,9 @@ import { Academia } from "../models/academia.model";
 export class AcademiaService {
   url = "http://localhost:3000/api/academia";
   constructor(private http: HttpClient) {}
-  registrar(nombre: String) {
+  registrar(Academia: Academia) {
     return this.http
-      .post(`${this.url}/registrar`, { nombre: nombre })
+      .post(`${this.url}/registrar`, { nombre: Academia })
       .toPromise();
   }
   obtener() {
