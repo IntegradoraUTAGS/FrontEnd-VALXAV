@@ -10,7 +10,13 @@ import { MateriaService } from 'src/app/services/materia.service';
 })
 export class AltamateriaComponent implements OnInit {
 materia:Materia= new Materia();
+
 constructor(private materiaService: MateriaService) { }
+
+
+acade: Acade = new Acade();
+acades: Acade[];
+  ngOnInit() {
 
 
   ngOnInit() {

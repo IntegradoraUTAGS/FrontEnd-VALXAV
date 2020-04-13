@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../models/usuario.model';
 import { UsuarioService } from '../../services/usuario.service';
 import Swal  from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +11,7 @@ import Swal  from 'sweetalert2';
 })
 export class RegisterComponent implements OnInit {
   usuario: Usuario  = new Usuario();
-  constructor(private servicio: UsuarioService) { }
+  constructor(public router: Router,private servicio: UsuarioService) { }
 
   ngOnInit() {
   }
@@ -21,7 +22,12 @@ export class RegisterComponent implements OnInit {
 
     this.servicio.registrar(this.usuario).then(resp => {
       console.log(resp);
-      
+      Swal.fire(
+        'Good job!',
+        'registrado con exito!',
+        'success'
+      )
+      this.router.navigateByUrl('login');
     }).catch((err: any) => {
       
       console.log(err);
@@ -31,7 +37,7 @@ export class RegisterComponent implements OnInit {
         title: err.msg,
         text: err.error.msg,
       })
-     // location.href="login"
+ 
       
     });
   } else {
