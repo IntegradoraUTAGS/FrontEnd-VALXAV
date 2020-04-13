@@ -11,7 +11,7 @@ import { Acade } from 'src/app/models/acade.model';
 export class AltamateriaComponent implements OnInit {
 materia:Materia= new Materia();
 constructor(private servicio: MateriaService) { }
-cade: Acade = new Acade();
+acade: Acade = new Acade();
 acades: Acade[];
   ngOnInit() {
 
