@@ -24,18 +24,21 @@
 									</div>
 									
 									<div class="form-group">
-							<h5>Numero de Unidades</h5>
-							<input [(ngModel)]="materias.numeroUnidades" type="date" name="numeroUnidades" id="numeroUnidades" tabindex="1" class="form-control" placeholder="Ingresa numero de unidades">
+							<h5>Numero De Unidades</h5>
+							<input [(ngModel)]="materia.numeroUnidades" type="text" name="numeroUnidades" id="numeroUnidades" tabindex="1" class="form-control" >
 									</div>
 
-									<div class="form-group"> 
-										<h5>academia</h5>
-										<input [(ngModel)]="materias.academia" type="date" name="academia" id="academia" tabindex="1" class="form-control" placeholder="Ingresa la academia">
-													</div>
+									<hr>
+						<div class="form-group">
+							<p>Academia</p>
+						<select [(ngModel)]="acade.nombre">
+							<option *ngFor="let Iacade of acades" [value]="Iacade">{{Iacade.nombre}}</option>
+						</select> 
+					</div>
 
 									<div class="form-group"> 
-						<h5>estado</h5>
-						<input [(ngModel)]="materias.estado" type="date" name="estado" id="estado" tabindex="1" class="form-control" placeholder="Ingresa el estado">
+						<h5>Estado</h5>
+						<input [(ngModel)]="materia.estado" type="text" name="estado" id="estado" tabindex="1" class="form-control" >
 									</div>
 
 					 			         <div class="form-group">
