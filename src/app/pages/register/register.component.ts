@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
     if (this.usuario.password == this.usuario.confirmPass) {
 
     this.servicio.registrar(this.usuario).then(resp => {
-      console.log(resp);
+     
       Swal.fire(
         'Good job!',
         'registrado con exito!',
@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
       this.router.navigateByUrl('login');
     }).catch((err: any) => {
       
-      console.log(err);
+      
       
       Swal.fire({
         icon: 'error',
