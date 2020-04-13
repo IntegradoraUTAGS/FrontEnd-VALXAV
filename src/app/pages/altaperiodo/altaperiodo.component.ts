@@ -23,11 +23,8 @@ export class AltaperiodoComponent implements OnInit {
 registrarperiodo(){
   console.log(this.periodo);
   this.periodoService.registrarperiodo(this.periodo).then((respuesta) => {
-
   }).catch((err) => {
-
   });
-  
   }
 }
 
