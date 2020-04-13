@@ -11,5 +11,12 @@ export class MateriaService {
 
   postMateria(periodo: Materia){
     return this.http.post(`${this.url}/materia/registrar`, Materia ).toPromise();
+
+  }
+  getMateria() {
+    return this.http.get(`${this.url}/materia/obtener`).toPromise();
+  }
+  getAcade() {
+    return this.http.get(`${this.url}/academia/obtener`).toPromise();
   }
 }
