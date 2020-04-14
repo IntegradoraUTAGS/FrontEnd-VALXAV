@@ -1,8 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Periodo } from 'src/app/models/periodo.model';
 import { PeriodoService } from '../../services/periodo.service';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
+import { NgForm } from '@angular/forms';
 
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 3000
+ });
 
 
 @Component({
@@ -11,18 +20,29 @@ import { PeriodoService } from '../../services/periodo.service';
   styleUrls: ['./altaperiodo.component.css']
 })
 export class AltaperiodoComponent implements OnInit {
+  @Output() salida = new EventEmitter();
   periodo: Periodo = new Periodo ();
-  constructor(private periodoService: PeriodoService) {
+
+  
+  
+
+  constructor(public router: Router, private periodoService: PeriodoService) {
+
+
 
    }
 
   ngOnInit() {
   }
-registrarperiodo(){
-  console.log(this.periodo);
-  this.periodoService.registrarperiodo(this.periodo).then((respuesta) => {
-  }).catch((err) => {
-  });
+  registrarperiodo(forma:NgForm) {
+    this.periodoService.registrarperiodo(this.periodo).then((periodo: any) => {
+      Toast.fire(periodo.msg, '', 'success');
+      forma.reset();
+      this.router.navigateByUrl('inicio');
+    }).catch((err: any) => {
+      Toast.fire(err.error.msg, '', 'error');
+    });
   }
-}
+  
 
+}
