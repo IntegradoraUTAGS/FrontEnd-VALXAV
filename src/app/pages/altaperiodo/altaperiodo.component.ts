@@ -22,10 +22,13 @@ const Toast = Swal.mixin({
 export class AltaperiodoComponent implements OnInit {
   @Output() salida = new EventEmitter();
   periodo: Periodo = new Periodo ();
+
   
   
 
   constructor(public router: Router, private periodoService: PeriodoService) {
+
+
 
    }
 
