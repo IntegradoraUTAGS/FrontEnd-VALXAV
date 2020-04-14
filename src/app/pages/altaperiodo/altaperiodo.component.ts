@@ -12,8 +12,6 @@ import { PeriodoService } from '../../services/periodo.service';
 })
 export class AltaperiodoComponent implements OnInit {
   periodo: Periodo = new Periodo ();
-  
-
   constructor(private periodoService: PeriodoService) {
 
    }
