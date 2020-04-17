@@ -1,33 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { Materia } from '../../models/materia.model';
-import { MateriaService } from 'src/app/services/materia.service';
-
+import { Acade } from "../../models/acade.model";
+import { Component, OnInit } from "@angular/core";
+import { Materia } from "../../models/materia.model";
+import { MateriaService } from "src/app/services/materia.service";
 
 @Component({
-  selector: 'app-altamateria',
-  templateUrl: './altamateria.component.html',
-  styleUrls: ['./altamateria.component.css']
+  selector: "app-altamateria",
+  templateUrl: "./altamateria.component.html",
+  styleUrls: ["./altamateria.component.css"],
 })
 export class AltamateriaComponent implements OnInit {
-materia:Materia= new Materia();
+  materia: Materia = new Materia();
 
-constructor(private materiaService: MateriaService) { }
+  constructor(private materiaService: MateriaService) {}
 
+  acade: Acade = new Acade();
+  acades: Acade[];
+  ngOnInit() {}
 
-acade: Acade = new Acade();
-acades: Acade[];
-  ngOnInit() {
-
-
-  ngOnInit() {
-  
-  }
-  registrarmateria(){
+  registrarmateria() {
     console.log(this.materia);
-    this.materiaService.registrarmateria(this.materia).then((respuesta) => {
-    }).catch((err) => {
-    });
-    }
-   
-  
+    this.materiaService
+      .registrarmateria(this.materia)
+      .then((respuesta) => {})
+      .catch((err) => {});
+  }
 }
