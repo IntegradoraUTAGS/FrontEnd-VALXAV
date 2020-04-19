@@ -3,7 +3,6 @@ import { Periodo } from 'src/app/models/periodo.model';
 import { PeriodoService } from '../../services/periodo.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
-
 import { NgForm } from '@angular/forms';
 
 const Toast = Swal.mixin({
