@@ -25,6 +25,9 @@ body {
 .panel-login>.panel-heading a.active{
 	color: #029f5b;
 	font-size: 18px;
+	
+	
+	
 }
 .panel-login>.panel-heading hr{
 	margin-top: 10px;
@@ -90,10 +93,12 @@ body {
 	padding: 14px 0;
 	text-transform: uppercase;
 	border-color: #1CB94A;
+	
 }
 .btn-register:hover,
 .btn-register:focus {
 	color: #fff;
 	background-color: #1CA347;
 	border-color: #1CA347;
+	
 }
