@@ -6,7 +6,6 @@ import Swal from "sweetalert2";
   selector: "app-academia",
   templateUrl: "./academia.component.html",
   styleUrls: ["./academia.component.css"],
-
 })
 export class AcademiaComponent implements OnInit {
   academias: any[] = [];
@@ -15,17 +14,7 @@ export class AcademiaComponent implements OnInit {
   constructor(protected academiaService: AcademiaService) {}
 
   ngOnInit() {
-    this.academiaService
-      .obtener()
-
-      .then((data) => {
-        // Success
-        this.academias = data["academia"];
-      })
-      .catch((error) => {
-        console.error(error);
-
-      });
+    this.obtener();
   }
 
   Agregar(Nombre) {
@@ -33,7 +22,6 @@ export class AcademiaComponent implements OnInit {
       .registrar(Nombre)
 
       .then((data) => {
-
         // Success
 
         Swal.fire({
@@ -42,16 +30,14 @@ export class AcademiaComponent implements OnInit {
           title: "Your work has been saved",
           showConfirmButton: false,
 
-          timer: 1500
-
+          timer: 1500,
         });
 
-        location.reload();
+        this.obtener();
       })
 
       .catch((error) => {
         console.error(error);
-
       });
   }
 
@@ -62,8 +48,7 @@ export class AcademiaComponent implements OnInit {
 
         cancelButton: "btn btn-danger",
       },
-      buttonsStyling: false
-
+      buttonsStyling: false,
     });
 
     swalWithBootstrapButtons
@@ -78,7 +63,6 @@ export class AcademiaComponent implements OnInit {
         reverseButtons: true,
       })
       .then((result) => {
-
         if (result.value) {
           swalWithBootstrapButtons.fire(
             "Deleted!",
@@ -86,6 +70,7 @@ export class AcademiaComponent implements OnInit {
             "success"
           );
           this.Eliminar(Id);
+          this.obtener();
         } else if (
           /* Read more about handling dismissals below */
           result.dismiss === Swal.DismissReason.cancel
@@ -103,14 +88,13 @@ export class AcademiaComponent implements OnInit {
   Eliminar(Id) {
     this.academiaService
       .eliminar(Id)
-
       .then((data) => {
         // Success
-        location.reload();
+        //location.reload();
+        this.obtener();
       })
       .catch((error) => {
         console.error(error);
-
       });
   }
 
@@ -119,7 +103,7 @@ export class AcademiaComponent implements OnInit {
       .actualizar(id, nombre)
 
       .then((data) => {
-
+        console.log(data);
         Swal.fire({
           position: "top-end",
           icon: "success",
@@ -128,10 +112,10 @@ export class AcademiaComponent implements OnInit {
 
           timer: 1500,
         });
+        this.obtener();
       })
       .catch((error) => {
         console.error(error);
-
       });
   }
   AlertaEditar(Id, inputValue) {
@@ -142,15 +126,25 @@ export class AcademiaComponent implements OnInit {
       showCancelButton: true,
 
       inputValidator: (value) => {
-
         if (!value) {
           return "You need to write something!";
         }
         this.Editar(Id, value);
-        location.reload();
-
-      }
-
+        this.obtener();
+      },
     });
+  }
+
+  obtener() {
+    this.academiaService
+      .obtener()
+
+      .then((data) => {
+        // Success
+        this.academias = data["academia"];
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
 }
