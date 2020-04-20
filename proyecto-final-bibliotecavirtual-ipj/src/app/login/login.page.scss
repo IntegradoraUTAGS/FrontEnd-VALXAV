@@ -1,0 +1,30 @@
+.titulo {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.boton {
+    background-color: #00ff55;
+    color: black;
+}
+
+.borde {
+    background-color: rgba(61, 61, 61, 0.8);
+    border: 20px solid rgb(61, 61, 61, 0.4);
+    border-radius: 25px;
+    margin: 20px;
+}
+
+.icono {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ion-content.background {
+    --background: url('../../assets/inicio.jpg') 0 0/100% 100% no-repeat;
+}

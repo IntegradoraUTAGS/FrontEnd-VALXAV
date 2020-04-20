@@ -1,0 +1,85 @@
+<ion-app>
+    <ion-menu side="start" content-id="main-content">
+        <ion-header>
+            <ion-toolbar translucent color="dark">
+                <ion-title>Menu</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <ion-list>
+                <ion-item (click)="principal()">
+                    <ion-icon name="home-sharp" slot="start"></ion-icon>
+                    <ion-label>Principal</ion-label>
+                </ion-item>
+                <ion-item-sliding>
+                    <ion-item-options side="start">
+                        <ion-item-option (click)="alta()" color="success">
+                            <ion-icon name="add-circle-outline" color="dark"></ion-icon>
+                        </ion-item-option>
+                    </ion-item-options>
+
+                    <ion-item color="medium">
+                        <ion-icon name="book-sharp" slot="start"></ion-icon>
+                        <ion-label>Libro</ion-label>
+                    </ion-item>
+                    <ion-item-options side="end">
+                        <ion-item-option (click)="buscar()">
+                            <ion-icon name="search-sharp"></ion-icon>
+                        </ion-item-option>
+                    </ion-item-options>
+                </ion-item-sliding>
+                <ion-item (click)="favoritos()">
+                    <ion-icon name="heart" slot="start"></ion-icon>
+                    <ion-label>Favoritos</ion-label>
+                </ion-item>
+                <ion-item-sliding>
+                    <ion-item-options side="start">
+                        <ion-item-option color="danger" (click)="login()">
+                            <ion-icon slot="bottom" name="log-out-outline"></ion-icon>
+                            Salir
+                        </ion-item-option>
+                    </ion-item-options>
+
+                    <ion-item>
+                        <ion-icon name="people-sharp" slot="start"></ion-icon>
+                        <ion-label>Usuario</ion-label>
+                    </ion-item>
+
+                    <ion-item-options side="end">
+                        <ion-item-option (click)="cuenta()">MI CUENTA</ion-item-option>
+                    </ion-item-options>
+                </ion-item-sliding>
+            </ion-list>
+        </ion-content>
+    </ion-menu>
+
+    <div class="ion-page" id="main-content">
+        <ion-header>
+            <ion-toolbar color="dark">
+                <ion-buttons slot="start">
+                    <ion-menu-button></ion-menu-button>
+                </ion-buttons>
+                <ion-title>Bibliotech</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content class="background">
+            <div class="borde">
+                <legend class="titulo">AGREGAR Prestamo</legend><br>
+                <ion-item>
+                    <ion-input type="text" [(ngModel)]="usuario" placeholder="Seleccione usuario"></ion-input>
+                </ion-item><br>
+                <ion-item>
+                    <ion-input type="text" [(ngModel)]="libro" placeholder="Seleccione libro"></ion-input>
+                </ion-item><br>
+                <ion-item>
+                    <ion-input type="text" [(ngModel)]="fecha" placeholder="ejemplo 10/8/2020"></ion-input>
+                </ion-item><br>
+
+                <ion-button class="boton" (click)="subir()" expand="block" fill="clear">
+                    AGREGAR
+                </ion-button>
+            </div>
+        </ion-content>
+    </div>
+
+</ion-app>

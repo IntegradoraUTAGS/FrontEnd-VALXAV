@@ -1,0 +1,31 @@
+ion-content.background {
+    --background: url('../../assets/modificar.jpg') 0 0/100% 100% no-repeat;
+    opacity: 0.9;
+}
+
+.logout {
+    position: absolute;
+    bottom: 0px;
+}
+
+ion-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.titulo {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.boton {
+    background-color: #00ff55;
+    color: black;
+    font-weight: bold;
+}
+
+.borde {
+    margin: 20px;
+}

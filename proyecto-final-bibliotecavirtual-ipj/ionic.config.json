@@ -1,0 +1,8 @@
+{
+  "name": "bibliotech",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}
