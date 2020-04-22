@@ -5,7 +5,9 @@ import { Injectable } from "@angular/core";
   providedIn: "root",
 })
 export class CarreraService {
-  url = "http://localhost:3000/api";
+  //url = "http://localhost:3000/api";
+  url = "http://172.17.1.7:3000/api";
+ 
   constructor(protected http: HttpClient) {}
   registrar(nombre: any) {
     return this.http

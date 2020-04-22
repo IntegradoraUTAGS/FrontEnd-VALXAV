@@ -5,8 +5,9 @@ import { Materia } from '../models/materia.model';
   providedIn: 'root'
 })
 export class MateriaService {
-  url='http://localhost:3000/api'
-
+  //url='http://localhost:3000/api'
+  url = "http://172.17.1.7:3000/api";
+ 
   constructor(private http: HttpClient) { }
 
 
