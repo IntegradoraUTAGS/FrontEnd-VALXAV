@@ -9,7 +9,7 @@ import { environment } from './../../environments/environment.prod';
 export class PeriodoService {
 
  constructor(private http: HttpClient) { }
- urlLocal = "http://localhost:3000/api";
+ urlLocal : "http://localhost:3000/api";
  
  urlProd : "http://172.17.1.7:3000/api";
 
