@@ -1,18 +1,19 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-
+import { environment } from './../../environments/environment.prod';
 @Injectable({
   providedIn: "root",
 })
 export class EspecialidadService {
-  //url = "http://localhost:3000/api";
-  url = "http://172.17.1.7:3000/api";
+  urlLocal = "http://localhost:3000/api";
+ 
+  urlProd : "http://172.17.1.7:3000/api";
   
   constructor(private http: HttpClient) {}
 
   registrar(nombre: any, carrera: any) {
     return this.http
-      .post(`${this.url}/especialidad/registrar`, { nombre, carrera })
+      .post(`${this.urlProd}/especialidad/registrar`, { nombre, carrera })
       .toPromise();
   }
 }
