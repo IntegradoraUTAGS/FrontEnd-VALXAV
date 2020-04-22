@@ -1,22 +1,24 @@
+import { environment } from './../../environments/environment.prod';
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Usuario } from "../models/usuario.model";
 import { Coordinador } from "../models/coordinador.model";
 
+ 
 @Injectable({
   providedIn: "root",
 })
 export class UsuarioService {
-  //url = "http://localhost:3000/api";
+  urlLocal : "http://localhost:3000/api";
  
-  url = "http://172.17.1.7:3000/api";
+  urlProd : "http://172.17.1.7:3000/api";
 
   constructor(private http: HttpClient) {}
   registrar(usuario: Usuario) {
-    return this.http.post(`${this.url}/usuario/registrar`, usuario).toPromise();
+    return this.http.post(`${this.urlProd}/usuario/registrar`, usuario).toPromise();
   }
   login(usuario: Usuario) {
-    return this.http.post(`${this.url}/login/login`, usuario).toPromise();
+    return this.http.post(`${this.urlProd}/login/login`, usuario).toPromise();
 
   }
   getAcademia() {
