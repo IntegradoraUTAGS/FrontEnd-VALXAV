@@ -5,7 +5,9 @@ import { HttpClient } from "@angular/common/http";
   providedIn: "root",
 })
 export class EspecialidadService {
-  url = "http://localhost:3000/api";
+  //url = "http://localhost:3000/api";
+  url = "http://172.17.1.7:3000/api";
+  
   constructor(private http: HttpClient) {}
 
   registrar(nombre: any, carrera: any) {

@@ -5,7 +5,8 @@ import { Academia } from "../models/academia.model";
   providedIn: "root",
 })
 export class AcademiaService {
-  url = "http://localhost:3000/api/academia";
+  url = "http://172.17.1.7:3000/api/academia";
+  //url = "http://localhost:3000/api/academia";
   constructor(private http: HttpClient) {}
   registrar(Academia: Academia) {
     return this.http

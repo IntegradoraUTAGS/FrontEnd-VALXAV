@@ -11,8 +11,8 @@ export class PeriodoService {
 
 
  registrarperiodo(periodo:Periodo){
-
-  return this.http.post('http://localhost:3000/api/periodo/registrar',periodo).toPromise();
+  return this.http.post('http://172.17.1.7:3000/api/periodo/registrar',periodo).toPromise();
+  //return this.http.post('http://localhost:3000/api/periodo/registrar',periodo).toPromise();
  }
-
+ 
 }

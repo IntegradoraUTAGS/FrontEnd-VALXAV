@@ -7,7 +7,9 @@ import { Coordinador } from "../models/coordinador.model";
   providedIn: "root",
 })
 export class UsuarioService {
-  url = "http://localhost:3000/api";
+  //url = "http://localhost:3000/api";
+ 
+  url = "http://172.17.1.7:3000/api";
 
   constructor(private http: HttpClient) {}
   registrar(usuario: Usuario) {
