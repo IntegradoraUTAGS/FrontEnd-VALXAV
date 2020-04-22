@@ -16,7 +16,7 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form  #Forma='ngForm' (ngSubmit)="registrarmateria(forma)" #forma="ngForm">
+								<form   (ngSubmit)="registrarmateria()" #forma="ngForm">
 									<div class="form-group">
 										<input placeholder="Nombre de Materia" type="text " class="form-control is-valid " [ngClass]="{'is-invalid' : (!nombre.valid && nombre.touched), 'is-valid' : nombre.valid}" id="validationServer01 " name="nombre" [(ngModel)]="materia.nombre " #nombre="ngModel"
 											required>
