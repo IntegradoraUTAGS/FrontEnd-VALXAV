@@ -9,9 +9,9 @@ import { Coordinador } from "../models/coordinador.model";
   providedIn: "root",
 })
 export class UsuarioService {
-  urlLocal : "http://localhost:3000/api";
+  urlLocal = "http://localhost:3000/api";
  
-  urlProd : "http://172.17.1.7:3000/api";
+  urlProd = "http://172.17.1.7:3001/api";
 
   constructor(private http: HttpClient) {}
   registrar(usuario: Usuario) {
@@ -22,21 +22,21 @@ export class UsuarioService {
 
   }
   getAcademia() {
-    return this.http.get(`${this.url}/academia`);
+    return this.http.get(`${this.urlProd}/academia`);
   }
 
   postAcademia(nombre: any) {
-    return this.http.post(`${this.url}/academia`, {
+    return this.http.post(`${this.urlProd}/academia`, {
       nombre: nombre
     });
   }
 
   deleteAcademia(id: any) {
-    return this.http.delete(`${this.url}/academia/${id}`);
+    return this.http.delete(`${this.urlProd}/academia/${id}`);
   }
 
   putAcademia(id: any, nombre: any) {
-    return this.http.put(`${this.url}/academia/${id}`, {
+    return this.http.put(`${this.urlProd}/academia/${id}`, {
       nombre: nombre
     });
 
@@ -44,23 +44,23 @@ export class UsuarioService {
 
   postCoordinador(coordinador: Coordinador) {
     return this.http
-      .post(`${this.url}/coordinador/registrar`, coordinador)
+      .post(`${this.urlProd}/coordinador/registrar`, coordinador)
       .toPromise();
   }
 
 
   postCarrera(nombre: any) {
-    return this.http.post(`${this.url}/carrera/registrar`, {
+    return this.http.post(`${this.urlProd}/carrera/registrar`, {
       nombre: nombre
     });
   }
 
 
   getCoordinador() {
-    return this.http.get(`${this.url}/usuario/obtener`).toPromise();
+    return this.http.get(`${this.urlProd}/usuario/obtener`).toPromise();
   }
 
   getAcade() {
-    return this.http.get(`${this.url}/academia/obtener`).toPromise();
+    return this.http.get(`${this.urlProd}/academia/obtener`).toPromise();
   }
 }

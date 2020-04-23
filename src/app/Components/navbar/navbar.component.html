@@ -19,16 +19,12 @@ margin-bottom: 0px;
     <a class="navbar-brand" href="#">Validacion de Evidencias</a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" href="#"
+        <a class="nav-link" routerLink="/home"
           >Inicio <span class="sr-only">(current)</span></a
         >
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/login"> Iniciar sesion</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/register">Registro</a>
-      </li>
+     
+    
 
       <li class="nav-item dropdown">
         <a
@@ -72,7 +68,7 @@ margin-bottom: 0px;
           _ngcontent-kxm-c1=""
           aria-disabled="true"
           class="nav-link"
-          href="index.html"
+          (click)='logout()'
           tabindex="-1"
           style="
       border-right-width: 0px;

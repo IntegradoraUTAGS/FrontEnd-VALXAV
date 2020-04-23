@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="container">
     	<div class="row">
 			<div _ngcontent-ksu-c2="" class="col-md-6 col-md-offset-3" style="
@@ -16,19 +17,19 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-							<form id="alta-form" action="Api rest de alta *********" method="post" role="form" style="display: block;">
+							<form #Myform="ngForm" id="alta-form" (ngSubmit)="registrarCoo(Myform)" method="post" role="form" style="display: block;">
 								
 							<div class="form-group">
 								<p>Docente</p>
-								<select [(ngModel)]="coordinador.usuario">
-									<option *ngFor="let coor of coordinadores" [value]="coor">{{coor.nombre}}</option>
+								<select name="docente" #docente="ngModel" [(ngModel)]="coordinador.usuario" class="form-control">
+									<option *ngFor="let coor of coordinadores" [value]="coor._id">{{coor.nombre}}</option>
 								</select> 
 						</div>
 						<hr>
 						<div class="form-group">
 							<p>Academia</p>
-						<select [(ngModel)]="acade.nombre">
-							<option *ngFor="let Iacade of acades" [value]="Iacade">{{Iacade.nombre}}</option>
+						<select name="Academia" #Academia="ngModel" [(ngModel)]="coordinador.academia" class="form-control">
+							<option *ngFor="let Iacade of acades" [value]="Iacade._id">{{Iacade.nombre}}</option>
 						</select> 
 					</div>
 					<hr>

@@ -9,12 +9,12 @@ import { environment } from './../../environments/environment.prod';
 export class PeriodoService {
 
  constructor(private http: HttpClient) { }
- urlLocal : "http://localhost:3000/api";
+ urlLocal = "http://localhost:3000/api";
  
- urlProd : "http://172.17.1.7:3000/api";
+ urlProd = "http://172.17.1.7:3001/api";
 
  registrarperiodo(periodo:Periodo){
-  return this.http.post('http://172.17.1.7:3000/api/periodo/registrar',periodo).toPromise();
+  return this.http.post(`${this.urlProd}/periodo/registrar`,periodo).toPromise();
   //return this.http.post('http://localhost:3000/api/periodo/registrar',periodo).toPromise();
  }
  

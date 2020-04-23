@@ -3,6 +3,8 @@ import { Coordinador } from '../../models/coordinador.model';
 import { UsuarioService } from '../../services/usuario.service';
 import { Usuario } from 'src/app/models/usuario.model';
 import { Acade } from 'src/app/models/acade.model';
+import Swal  from 'sweetalert2';
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-altacordinador',
   templateUrl: './altacordinador.component.html',
@@ -20,10 +22,16 @@ acades: Acade[];
     this.obtenerCoo();
   
   }
-registrarCoo(){
+registrarCoo(form: NgForm){
    this.servicio.postCoordinador(this.coordinador).then(resp =>{
     console.log(resp);
-    //location.href=""
+    
+    Swal.fire(
+      'Good job!',
+      'registrado con exito!',
+      'success'
+    )
+form.reset();
   }).catch((err:any)=>{
     console.log(err);
   });

@@ -7,9 +7,9 @@ import { environment } from './../../environments/environment.prod';
   providedIn: 'root'
 })
 export class GrupoService {
-  urlLocal : "http://localhost:3000/api";
+  urlLocal = "http://localhost:3000/api";
  
-  urlProd : "http://172.17.1.7:3000/api";
+  urlProd = "http://172.17.1.7:3001/api";
  
   constructor(private http: HttpClient) {}
 

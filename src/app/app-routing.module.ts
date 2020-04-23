@@ -11,17 +11,19 @@ import { AltaespecialidadComponent } from "./pages/altaespecialidad/altaespecial
 import { AltamateriaComponent } from "./pages/altamateria/altamateria.component";
 import { NavbarComponent } from "./Components/navbar/navbar.component";
 import { AcademiaComponent } from "./pages/academia/academia.component";
+import { LoginGuard } from './guard/login.guard';
 
 const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
-  { path: "altacarrera", component: AltacarreraComponent },
-  { path: "altagrupo", component: AltagrupoComponent },
-  { path: "altacordinador", component: AltacordinadorComponent },
-  { path: "altaperiodo", component: AltaperiodoComponent },
-  { path: "altaespecialidad", component: AltaespecialidadComponent },
-  { path: "altamateria", component: AltamateriaComponent },
-  { path: "academia", component: AcademiaComponent },
+  { path: "altacarrera", component: AltacarreraComponent,canActivate: [LoginGuard] },
+  { path: "altagrupo", component: AltagrupoComponent,canActivate: [LoginGuard] },
+  { path: "altacordinador", component: AltacordinadorComponent,canActivate: [LoginGuard] },
+  { path: "altaperiodo", component: AltaperiodoComponent,canActivate: [LoginGuard] },
+  { path: "altaespecialidad", component: AltaespecialidadComponent,canActivate: [LoginGuard] },
+  { path: "altamateria", component: AltamateriaComponent,canActivate: [LoginGuard] },
+  { path: "academia", component: AcademiaComponent,canActivate: [LoginGuard] },
   { path: "home", component: NavbarComponent }
 ];
 

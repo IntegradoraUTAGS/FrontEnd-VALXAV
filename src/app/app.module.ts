@@ -18,6 +18,8 @@ import { AltaespecialidadComponent } from "./pages/altaespecialidad/altaespecial
 import { AltamateriaComponent } from "./pages/altamateria/altamateria.component";
 import { AltaperiodoComponent } from "./pages/altaperiodo/altaperiodo.component";
 import { AcademiaComponent } from "./pages/academia/academia.component";
+import { RouterModule } from '@angular/router';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,7 @@ import { AcademiaComponent } from "./pages/academia/academia.component";
     AltaperiodoComponent,
     AcademiaComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [RouterModule,BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, FormsModule],
   providers: [MusicService],
   bootstrap: [AppComponent]
 })
